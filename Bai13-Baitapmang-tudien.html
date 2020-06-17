@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h3>Từ điển Anh Việt</h3>
+English:
+<input type="text" id="en"/>
+<input type="button" value="Translate" onclick="dich();"/>
+<br>
+<br>
+Vietnamese:<br>
+<div id="vn"></div>
+<script>
+    let EN = ["father","mother","son","daughter"];
+    let VN = ["bố","mẹ","con trai","con gái"];
+    function dich() {
+        let word=document.getElementById("en").value;
+        for (let i=0;i<EN.length;i++) {
+            if (EN[i]==word) {
+                word=VN[i];
+                document.getElementById("vn").innerHTML=word;
+                break;
+            } else {
+            document.getElementById("vn").innerText="not found";
+            }
+        }
+
+    }
+</script>
+</body>
+</html>
