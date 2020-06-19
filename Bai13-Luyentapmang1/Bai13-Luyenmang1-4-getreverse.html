@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập luyện mảng</title>
+</head>
+<body>
+<script>
+function inputArray(a) {
+    let arrSize;
+    do {
+        arrSize = +prompt("Nhập vào độ dài của mảng: ");
+    }
+    while (arrSize<=0);
+    for (let i=0;i<arrSize;i++) {
+        a[i]=+prompt("Nhập phần tử thứ "+i+" của mảng:")
+    }
+}
+function displayArray(a) {
+    for (let i=0;i<a.length;i++) {
+        document.write(a[i]+",");
+    }
+}
+
+function reverseArray(a) {
+    let i=0;
+    let j=a.length-1;
+    for (i=0,j=a.length-1;i<=j;i++,j--) {
+        let b=a[i];
+        a[i]=a[j];
+        a[j]=b;
+    }
+    document.write(a)
+    /*while (i<j) {
+        let value=a[i];
+        a[i]=a[j];
+        a[j]=value;
+        i++;
+        j--;
+    }
+    document.write(a);*/
+}
+
+let num=[];
+inputArray(num);
+displayArray(num);
+document.write("<br>");
+reverseArray(num);
+
+</script>
+</body>
+</html>

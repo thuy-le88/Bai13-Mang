@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập luyện mảng</title>
+</head>
+<body>
+<script>
+function inputArray(a) {
+    let arrSize;
+    do {
+        arrSize = +prompt("Nhập vào độ dài của mảng: ");
+    }
+    while (arrSize<=0);
+    for (let i=0;i<arrSize;i++) {
+        a[i]=+prompt("Nhập phần tử thứ "+i+" của mảng:")
+    }
+}
+function displayArray(a) {
+    for (let i=0;i<a.length;i++) {
+        document.write(a[i]+",");
+    }
+}
+function maxValue(a) {
+    let max=a[0];
+    for (let i=1;i<a.length;i++) {
+        if (max<a[i]) {
+            max=a[i];
+        }
+    }
+    return max;
+}
+let num=[];
+inputArray(num);
+displayArray(num);
+document.write("<br>")
+let maxnumber=maxValue(num);
+let index=num.indexOf(maxnumber);
+document.write("Giá trị lớn nhất của mảng là: "+maxnumber+" ở chỉ số "+index+" của mảng.");
+</script>
+</body>
+</html>

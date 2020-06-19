@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập luyện mảng</title>
+</head>
+<body>
+<script>
+function inputArray(a) {
+    let arrSize;
+    do {
+        arrSize = +prompt("Nhập vào độ dài của mảng: ");
+    }
+    while (arrSize<=0);
+    for (let i=0;i<arrSize;i++) {
+        a[i]=+prompt("Nhập phần tử thứ "+i+" của mảng:")
+    }
+}
+function displayArray(a) {
+    for (let i=0;i<a.length;i++) {
+        document.write(a[i]+",");
+    }
+}
+let num=[];
+inputArray(num);
+displayArray(num);
+let count=0;
+let i;
+for (i=0;i<num.length;i++) {
+    if (num[i]>=10) {
+        count++
+    }
+}
+document.write("<br>"+"Số phần tử trong mảng lớn hơn 10 là: "+count);
+</script>
+</body>
+</html>

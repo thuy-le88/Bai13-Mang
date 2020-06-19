@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập luyện mảng</title>
+</head>
+<body>
+<script>
+function inputArray(a) {
+    let arrSize;
+    do {
+        arrSize = +prompt("Nhập vào độ dài của mảng: ");
+    }
+    while (arrSize<=0);
+    for (let i=0;i<arrSize;i++) {
+        a[i]=+prompt("Nhập phần tử thứ "+i+" của mảng:")
+    }
+}
+function displayArray(a) {
+    for (let i=0;i<a.length;i++) {
+        document.write(a[i]+",");
+    }
+}
+function countNagetive(a) {
+    let count=0;
+    for (let i=0;i<a.length;i++) {
+        if (a[i]<0&&a[i]%1==0)
+            count++;
+    }
+    return count;
+}
+
+let num=[];
+inputArray(num);
+displayArray(num);
+document.write("<br>");
+let numberOfnagetive=countNagetive(num);
+document.write("Số lượng số nguyên âm trong mảng là: "+numberOfnagetive+" số.")
+
+</script>
+</body>
+</html>
